@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
 import { updateProfile } from "firebase/auth";
+import {Link} from "react-router-dom";
 
 const Register = () => {
     const [success, setSuccess] = useState("");
@@ -74,19 +75,19 @@ const Register = () => {
                 
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" placeholder="Enter Password" />
                 </Form.Group>
                 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
+                
                 <Button variant="primary" type="submit">Register</Button>
                 <br/>
-                
                 <Form.Text className="text-success">{success}</Form.Text>
-                <br/>
                 <Form.Text className="text-danger">{error}</Form.Text>
             </Form>
+            <p className="text-center mt-4">Already have an account? Please <Link to="/login">Login here</Link></p>
         </div>
     );
 };

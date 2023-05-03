@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
+import {Link} from "react-router-dom";
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -35,13 +36,14 @@ const Login = () => {
                 
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" placeholder="Enter password" />
                 </Form.Group>
                 
                 <Button variant="primary" type="submit">Login</Button>
                 <br/>
                 <Form.Text className="text-danger">{error}</Form.Text>
             </Form>
+            <p className="text-center mt-4">New to website? Please <Link to="/register">Register here</Link></p>
         </div>
     );
 };
