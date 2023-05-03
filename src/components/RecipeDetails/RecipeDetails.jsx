@@ -22,7 +22,7 @@ const RecipeDetails = ({ recipe }) => {
             <Container className="mt-5 mb-5">
                 <Row className="d-flex justify-content-center align-items-center">
                     <Col md={6} className="text-center">
-                        <img src={image} alt="404 Error" />
+                        <img src={image} alt="Recipe Image" />
                     </Col>
                     <Col md={6} className="d-flex align-items-center">
                         <div>
