@@ -14,6 +14,25 @@
     text-decoration: underline;
 }
 
+#myNav {
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.custom-nav {
+    align-items: center;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
 .navbar-dark .navbar-nav .dropdown-item {
     color: #212529;
 }
