@@ -9,7 +9,7 @@ const ChefCard = ({ chef }) => {
     const {id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes} = chef;
     
     return (
-        <div className="col-12 col-sm-6 col-md-4">
+        <div className="col-12 col-sm-12 col-md-4">
             <Card >
                 <LazyLoad height={286} offset={300} threshold={0.95}>
                     <Card.Img className="chefPicture" variant="top" src={chefPicture} />
