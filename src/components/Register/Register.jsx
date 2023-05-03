@@ -40,7 +40,6 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 setSuccess("Account has been created! Please Login.");
-                console.log(createdUser);
                 updateProfile(createdUser, {
                     displayName: name, photoURL: photo
                 })
