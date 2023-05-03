@@ -8,7 +8,7 @@ const ChefCard = ({ chef }) => {
     const {id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes} = chef;
     
     return (
-        <div className="col-6 col-md-4">
+        <div className="col-12 col-sm-6 col-md-4">
             <Card >
                 <Card.Img className="chefPicture" variant="top" src={chefPicture} />
                 <Card.Body>
