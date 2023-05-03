@@ -1,12 +1,15 @@
 import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 const Login = () => {
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     
-    const {signIn, loading} = useContext(AuthContext);
+    const {signIn} = useContext(AuthContext);
     
     const handleLogin = (event) => {
         event.preventDefault();
@@ -19,6 +22,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 setError("Wrong Credentials!");
