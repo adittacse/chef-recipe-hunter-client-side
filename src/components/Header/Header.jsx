@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import "./Header.css";
 
-const Navigation = ({ isLoggedIn, userName, userProfilePicture }) => {
+const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
     return (
         <Navbar bg="dark" variant="dark" expand="md">
             <Navbar.Brand href="#">Website Name</Navbar.Brand>
@@ -34,4 +35,4 @@ const Navigation = ({ isLoggedIn, userName, userProfilePicture }) => {
     );
 };
 
-export default Navigation;
+export default Header;
