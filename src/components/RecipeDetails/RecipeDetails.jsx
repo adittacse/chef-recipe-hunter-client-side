@@ -7,10 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from '@smastrom/react-rating'
 
 const RecipeDetails = ({ recipe }) => {
-    const [favorite, setFavorite] = useState();
     const {id, recipeId, name, ingredients, cookingMethod, rating, image} = recipe;
     
-    const showToastMessage = () => {
+    const showToastMessage = (event) => {
+        event.currentTarget.disabled = true;
+        
         toast.success('Recipe Added In Favorite List!', {
             position: toast.POSITION.TOP_CENTER
         });
@@ -29,10 +30,10 @@ const RecipeDetails = ({ recipe }) => {
                             <h5>Ingredients:</h5>
                             <div>
                                 {
-                                    ingredients.map(ingredient => <p>{ingredient}</p>)
+                                    ingredients.map(ingredient => <>{ingredient}, </>)
                                 }
                             </div>
-                            <h5>Ingredients:</h5>
+                            <h5 className="mt-3">Ingredients:</h5>
                             <p>{cookingMethod}</p>
                             <div className="d-flex justify-content-between align-items-center">
                                 <Card.Text className="d-flex align-items-center border border-warning border-2 rounded p-2">
