@@ -7,7 +7,7 @@ const Home = () => {
     
     return (
         <div className="container">
-            <h2 className="text-center">Introducing Our Chefs</h2>
+            <h2 className="text-center mt-5 mb-5">Introducing Our Chefs</h2>
             <div className="row g-5">
                 {
                     chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)

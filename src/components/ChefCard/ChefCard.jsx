@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Card} from "react-bootstrap";
 import { FaThumbsUp } from "react-icons/fa";
+import "./ChefCard.css";
 
 const ChefCard = ({ chef }) => {
     const {chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes} = chef;
@@ -8,9 +9,7 @@ const ChefCard = ({ chef }) => {
     return (
         <div className="col-6 col-md-4">
             <Card >
-                <Card.Img className="chefPicture img-fluid" style={{height: "286px"}}
-                          variant="top"
-                          src={chefPicture} />
+                <Card.Img className="chefPicture" variant="top" src={chefPicture} />
                 <Card.Body>
                     <Card.Title className="text-center">{chefName}</Card.Title>
                     <Card.Text>Experience: {yearsOfExperience}</Card.Text>
