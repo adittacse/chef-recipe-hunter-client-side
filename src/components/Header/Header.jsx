@@ -38,7 +38,7 @@ const Header = () => {
                                 !user && <Link className="nav-item" to="/register">Register</Link>
                             }
                             {
-                                user ? (<NavDropdown
+                                user ? <NavDropdown
                                         title={
                                             <img src={user?.photoURL} alt="User Profile" className="profile-picture"/>
                                         }
@@ -50,8 +50,8 @@ const Header = () => {
                                         <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item onClick={handleLogOut}>Logout</NavDropdown.Item>
-                                    </NavDropdown>)
-                                    : (<Nav.Link href="/login">Login</Nav.Link>)
+                                    </NavDropdown>
+                                    : <Nav.Link href="/login">Login</Nav.Link>
                             }
                         </Nav>
                     </Navbar.Collapse>
