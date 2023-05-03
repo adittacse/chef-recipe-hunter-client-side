@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const [success, setSuccess] = useState("");
@@ -34,15 +35,23 @@ const Register = () => {
             return;
         }
         
+        // creating account to firebase
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                setSuccess("User Has Been Created! Please Login.");
+                setSuccess("Account has been created! Please Login.");
                 console.log(createdUser);
+                updateProfile(createdUser, {
+                    displayName: name, photoURL: photo
+                })
+                    .then( () => {})
+                    .catch( error => {
+                        setError(error.message);
+                    });
             })
             .catch(error => {
                 setError(error.message);
-            })
+            });
     }
     
     return (
