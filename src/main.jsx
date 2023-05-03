@@ -20,12 +20,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:3000/chef/")
+                loader: () => fetch("https://chef-recipe-hunter-server-side-omega.vercel.app/chef/")
             },
             {
                 path: "/chefdetails/:id",
                 element: <ChefDetails></ChefDetails>,
-                loader: ({params}) => fetch(`http://localhost:3000/chef/${params.id}`)
+                loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-omega.vercel.app/chef/${params.id}`)
             },
             {
                 path: "/register",
