@@ -5,7 +5,7 @@ import {AuthContext} from "../../providers/AuthProvider.jsx";
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     const [show, setShow] = useState(false);
     
     const showDropdown = (e)=>{
@@ -14,6 +14,12 @@ const Header = () => {
     
     const hideDropdown = e => {
         setShow(false);
+    }
+    
+    const handleLogOut = () => {
+        logOut()
+            .then( () => {})
+            .catch(error => console.log(error));
     }
     
     return (
@@ -43,7 +49,7 @@ const Header = () => {
                                     >
                                         <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
                                         <NavDropdown.Divider />
-                                        <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={handleLogOut}>Logout</NavDropdown.Item>
                                     </NavDropdown>)
                                     : (<Nav.Link href="/login">Login</Nav.Link>)
                             }
