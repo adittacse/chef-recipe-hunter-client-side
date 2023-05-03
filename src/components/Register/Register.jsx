@@ -55,37 +55,40 @@ const Register = () => {
     }
     
     return (
-        <Form onSubmit={handleRegister} className="w-25 d-block mx-auto mt-5">
-            <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Your name</Form.Label>
-                <Form.Control type="text" placeholder="Enter name" />
-            </Form.Group>
-            
-            <Form.Group className="mb-3" controlId="photo">
-                <Form.Label>Photo URL</Form.Label>
-                <Form.Control type="text" placeholder="Enter photo url" />
-            </Form.Group>
-            
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-            
-            <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">Register</Button>
-            <br/>
-            
-            <Form.Text className="text-success">{success}</Form.Text>
-            <br/>
-            <Form.Text className="text-danger">{error}</Form.Text>
-        </Form>
+        <div>
+            <h2 className="text-center mt-4 mb-4">Register Here!</h2>
+            <Form onSubmit={handleRegister} className="w-25 d-block mx-auto">
+                <Form.Group className="mb-3" controlId="name">
+                    <Form.Label>Your name</Form.Label>
+                    <Form.Control type="text" placeholder="Enter name" />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="photo">
+                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Control type="text" placeholder="Enter photo url" />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="email">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">Register</Button>
+                <br/>
+                
+                <Form.Text className="text-success">{success}</Form.Text>
+                <br/>
+                <Form.Text className="text-danger">{error}</Form.Text>
+            </Form>
+        </div>
     );
 };
 
