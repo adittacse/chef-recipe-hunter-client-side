@@ -3,7 +3,7 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "./Header.css";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
 
-const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
+const Header = () => {
     const {user} = useContext(AuthContext);
     
     return (
@@ -14,7 +14,7 @@ const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
                 <Nav className="ml-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/blog">Blog</Nav.Link>
-                    {isLoggedIn ? (
+                    {user ? (
                         <NavDropdown
                             title={
                                 <img
@@ -25,7 +25,7 @@ const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
                             }
                             id="basic-nav-dropdown"
                         >
-                            <NavDropdown.Item disabled>{userName}</NavDropdown.Item>
+                            <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
                         </NavDropdown>

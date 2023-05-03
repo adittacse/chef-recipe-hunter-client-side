@@ -5,7 +5,7 @@ import {AuthContext} from "../../providers/AuthProvider.jsx";
 const Login = () => {
     const [error, setError] = useState("");
     
-    const {signIn} = useContext(AuthContext);
+    const {signIn, loading} = useContext(AuthContext);
     
     const handleLogin = (event) => {
         event.preventDefault();
