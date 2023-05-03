@@ -1,0 +1,9 @@
+.chef-details {
+    background-color: bisque;
+}
+
+.chef-details img {
+    width: 286px;
+    height: 286px;
+    border-radius: 50%;
+}
