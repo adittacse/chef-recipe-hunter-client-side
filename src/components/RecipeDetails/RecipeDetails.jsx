@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FaThumbsUp} from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating'
 
 const RecipeDetails = ({ recipe }) => {
+    const [favorite, setFavorite] = useState();
     const {id, recipeId, name, ingredients, cookingMethod, rating, image} = recipe;
+    
+    const showToastMessage = () => {
+        toast.success('Recipe Added In Favorite List!', {
+            position: toast.POSITION.TOP_CENTER
+        });
+    };
     
     return (
         <div>
@@ -25,12 +35,13 @@ const RecipeDetails = ({ recipe }) => {
                             <h5>Ingredients:</h5>
                             <p>{cookingMethod}</p>
                             <div className="d-flex justify-content-between align-items-center">
-                                <Link to={`/chefdetails/${id}`}>
-                                    <Button className="btn btn-dark">View Recipes</Button>
-                                </Link>
                                 <Card.Text className="d-flex align-items-center border border-warning border-2 rounded p-2">
-                                    <FaThumbsUp className="me-2"></FaThumbsUp> {rating}
+                                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly /> {rating}
                                 </Card.Text>
+                                <div>
+                                    <Button onClick={showToastMessage} className="btn btn-dark">Favorite</Button>
+                                    <ToastContainer />
+                                </div>
                             </div>
                         </div>
                     </Col>

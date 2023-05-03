@@ -10,6 +10,7 @@ import AuthProvider from "./providers/AuthProvider.jsx";
 import Login from "./components/Login/Login.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import ChefDetails from "./components/ChefDetails/ChefDetails.jsx";
+import '@smastrom/react-rating/style.css'
 
 const router = createBrowserRouter([
     {
