@@ -11,6 +11,7 @@ import Login from "./components/Login/Login.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import ChefDetails from "./components/ChefDetails/ChefDetails.jsx";
 import '@smastrom/react-rating/style.css'
+import Blog from "./components/Blog/Blog.jsx";
 
 const router = createBrowserRouter([
     {
@@ -20,12 +21,16 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("https://chef-recipe-hunter-server-side-omega.vercel.app/chef/")
+                loader: () => fetch("https://chef-recipe-hunter-server-side-adittacse.vercel.app/chef/")
             },
             {
                 path: "/chefdetails/:id",
                 element: <ChefDetails></ChefDetails>,
-                loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-omega.vercel.app/chef/${params.id}`)
+                loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side-adittacse.vercel.app/chef/${params.id}`)
+            },
+            {
+                path: "/blog",
+                element: <Blog></Blog>
             },
             {
                 path: "/register",

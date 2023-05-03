@@ -26,7 +26,7 @@ const Header = () => {
         <Navbar bg="dark" variant="dark" expand="md">
             <div className="container" id="myNav">
                 <div>
-                    <Navbar.Brand href="#" className="">Website Name</Navbar.Brand>
+                    <Navbar.Brand href="/" className="">Deshi Chef</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 </div>
                 <div>
