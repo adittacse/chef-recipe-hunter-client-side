@@ -21,6 +21,7 @@ const ChefDetails = () => {
                     </div>
                 </div>
             </div>
+            <h2 className="text-center mt-5">My Recipes</h2>
             <div>
                 {
                     recipes.map(recipe => <RecipeDetails key={recipe.id} recipe={recipe}></RecipeDetails>)
