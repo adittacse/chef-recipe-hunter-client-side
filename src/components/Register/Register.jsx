@@ -9,18 +9,40 @@ const Register = () => {
         event.preventDefault();
         setSuccess("");
         setError("");
+        
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password);
+        
+        //validate password
+        if(!/(?=.*[A-Z])/.test(password)) {
+            setError("Please add at least one uppercase");
+            return;
+        } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+            setError("Please add at least two numbers");
+            return;
+        } else if (!/(?=.*[!@#$&*])/.test(password)) {
+            setError("Please add a special character in your password");
+            return;
+        } else if (password.length < 6) {
+            setError("Please add at least 6 characters in your password!");
+            return;
+        }
     }
     
     return (
         <Form onSubmit={handleRegister} className="w-25 d-block mx-auto mt-5">
             <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Your name</Form.Label>
-                <Form.Control type="email" placeholder="Enter name" />
+                <Form.Control type="text" placeholder="Enter name" />
             </Form.Group>
             
             <Form.Group className="mb-3" controlId="photo">
                 <Form.Label>Photo URL</Form.Label>
-                <Form.Control type="email" placeholder="Enter photo url" />
+                <Form.Control type="text" placeholder="Enter photo url" />
             </Form.Group>
             
             <Form.Group className="mb-3" controlId="email">
