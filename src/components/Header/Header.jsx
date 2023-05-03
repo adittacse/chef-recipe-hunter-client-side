@@ -2,7 +2,9 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "./Header.css";
 
-const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
+const Header = ({ userName, userProfilePicture }) => {
+    const isLoggedIn = false;
+    
     return (
         <Navbar bg="dark" variant="dark" expand="md">
             <Navbar.Brand href="#">Website Name</Navbar.Brand>
