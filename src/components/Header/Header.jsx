@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "./Header.css";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
-import {Link} from "react-router-dom";
+import ActiveLink from "../ActiveLink/ActiveLink.jsx";
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -32,10 +32,10 @@ const Header = () => {
                 <div>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto custom-nav">
-                            <Link className="nav-item" to="/">Home</Link>
-                            <Link className="nav-item" to="/blog">Blog</Link>
+                            <ActiveLink className="nav-item" to="/">Home</ActiveLink>
+                            <ActiveLink className="nav-item" to="/blog">Blog</ActiveLink>
                             {
-                                !user && <Link className="nav-item" to="/register">Register</Link>
+                                !user && <ActiveLink className="nav-item" to="/register">Register</ActiveLink>
                             }
                             {
                                 user ? <NavDropdown
@@ -51,7 +51,7 @@ const Header = () => {
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item onClick={handleLogOut}>Logout</NavDropdown.Item>
                                     </NavDropdown>
-                                    : <Nav.Link href="/login">Login</Nav.Link>
+                                    : <ActiveLink className="nav-item" to="/login">Login</ActiveLink>
                             }
                         </Nav>
                     </Navbar.Collapse>
