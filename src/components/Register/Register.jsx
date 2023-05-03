@@ -60,26 +60,22 @@ const Register = () => {
             <Form onSubmit={handleRegister} className="w-25 d-block mx-auto">
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Your name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter name" />
+                    <Form.Control type="text" placeholder="Enter name" required />
                 </Form.Group>
                 
                 <Form.Group className="mb-3" controlId="photo">
                     <Form.Label>Photo URL</Form.Label>
-                    <Form.Control type="text" placeholder="Enter photo url" />
+                    <Form.Control type="text" placeholder="Enter photo url" required />
                 </Form.Group>
                 
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter email" required />
                 </Form.Group>
                 
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter Password" />
-                </Form.Group>
-                
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Control type="password" placeholder="Enter Password" required />
                 </Form.Group>
                 
                 <Button variant="primary" type="submit">Register</Button>
