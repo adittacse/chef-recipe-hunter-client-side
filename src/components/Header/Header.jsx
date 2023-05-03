@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "./Header.css";
+import {AuthContext} from "../../providers/AuthProvider.jsx";
 
-const Header = ({ userName, userProfilePicture }) => {
-    const isLoggedIn = false;
+const Header = ({ isLoggedIn, userName, userProfilePicture }) => {
+    const {user} = useContext(AuthContext);
     
     return (
         <Navbar bg="dark" variant="dark" expand="md">
@@ -17,7 +18,7 @@ const Header = ({ userName, userProfilePicture }) => {
                         <NavDropdown
                             title={
                                 <img
-                                    src={userProfilePicture}
+                                    src={user?.photoURL}
                                     alt="User Profile"
                                     className="profile-picture"
                                 />
