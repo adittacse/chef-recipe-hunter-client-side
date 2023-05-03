@@ -1,10 +1,18 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "./Header.css";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
 
 const Header = () => {
     const {user} = useContext(AuthContext);
+    const [show, setShow] = useState(false);
+    
+    const showDropdown = (e)=>{
+        setShow(!show);
+    }
+    const hideDropdown = e => {
+        setShow(false);
+    }
     
     return (
         <Navbar bg="dark" variant="dark" expand="md">
@@ -17,13 +25,12 @@ const Header = () => {
                     {user ? (
                         <NavDropdown
                             title={
-                                <img
-                                    src={user?.photoURL}
-                                    alt="User Profile"
-                                    className="profile-picture"
-                                />
+                                <img src={user?.photoURL} alt="User Profile" className="profile-picture"/>
                             }
                             id="basic-nav-dropdown"
+                            show={show}
+                            onMouseEnter={showDropdown}
+                            onMouseLeave={hideDropdown}
                         >
                             <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
                             <NavDropdown.Divider />
