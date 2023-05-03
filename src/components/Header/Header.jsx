@@ -10,37 +10,41 @@ const Header = () => {
     const showDropdown = (e)=>{
         setShow(!show);
     }
+    
     const hideDropdown = e => {
         setShow(false);
     }
     
     return (
         <Navbar bg="dark" variant="dark" expand="md">
-            <Navbar.Brand href="#">Website Name</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/blog">Blog</Nav.Link>
-                    {user ? (
-                        <NavDropdown
-                            title={
-                                <img src={user?.photoURL} alt="User Profile" className="profile-picture"/>
-                            }
-                            id="basic-nav-dropdown"
-                            show={show}
-                            onMouseEnter={showDropdown}
-                            onMouseLeave={hideDropdown}
-                        >
-                            <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
-                        </NavDropdown>
-                    ) : (
-                        <Nav.Link href="/login">Login</Nav.Link>
-                    )}
-                </Nav>
-            </Navbar.Collapse>
+            <div className="container ">
+                <Navbar.Brand href="#" className="flex-grow-1">Website Name</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav" >
+                    <Nav className="ml-auto flex-grow-1">
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/blog">Blog</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        {
+                            user ? (<NavDropdown
+                                    title={
+                                        <img src={user?.photoURL} alt="User Profile" className="profile-picture"/>
+                                    }
+                                    id="basic-nav-dropdown"
+                                    show={show}
+                                    onMouseEnter={showDropdown}
+                                    onMouseLeave={hideDropdown}
+                                >
+                                    <NavDropdown.Item disabled>{user?.displayName}</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+                                </NavDropdown>)
+                                : (<Nav.Link href="/login">Login</Nav.Link>)
+                        }
+                    </Nav>
+                </Navbar.Collapse>
+            </div>
         </Navbar>
     );
 };
