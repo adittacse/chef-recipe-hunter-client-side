@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
+import {AuthContext} from "../../providers/AuthProvider.jsx";
 
 const Register = () => {
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
+    
+    const {createUser} = useContext(AuthContext);
     
     const handleRegister = (event) => {
         event.preventDefault();
@@ -15,7 +18,6 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password);
         
         //validate password
         if(!/(?=.*[A-Z])/.test(password)) {
@@ -31,6 +33,16 @@ const Register = () => {
             setError("Please add at least 6 characters in your password!");
             return;
         }
+        
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                setSuccess("User Has Been Created! Please Login.");
+                console.log(createdUser);
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
     
     return (
