@@ -3,6 +3,7 @@ import {Button, Card} from "react-bootstrap";
 import { FaThumbsUp } from "react-icons/fa";
 import "./ChefCard.css";
 import {Link} from "react-router-dom";
+import LazyLoad from 'react-lazy-load';
 
 const ChefCard = ({ chef }) => {
     const {id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes} = chef;
@@ -10,7 +11,9 @@ const ChefCard = ({ chef }) => {
     return (
         <div className="col-12 col-sm-6 col-md-4">
             <Card >
-                <Card.Img className="chefPicture" variant="top" src={chefPicture} />
+                <LazyLoad height={286} offset={300} threshold={0.95}>
+                    <Card.Img className="chefPicture" variant="top" src={chefPicture} />
+                </LazyLoad>
                 <Card.Body>
                     <Card.Title className="text-center">{chefName}</Card.Title>
                     <Card.Text>Experience: {yearsOfExperience}</Card.Text>
