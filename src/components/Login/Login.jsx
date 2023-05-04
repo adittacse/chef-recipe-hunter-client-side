@@ -9,7 +9,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     
-    const {signIn, googleSignIn} = useContext(AuthContext);
+    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
     
     const handleLogin = (event) => {
         event.preventDefault();
@@ -31,6 +31,17 @@ const Login = () => {
     
     const handleGoogleSignIn = (event) => {
         googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
+    
+    const handleGithubSignIn = (event) => {
+        githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -62,7 +73,7 @@ const Login = () => {
             <p className="text-center">Or</p>
             <div className="d-flex mx-auto justify-content-center">
                 <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-secondary me-3">Sign In With Google</button>
-                <button type="button" className="btn btn-outline-secondary">Sign In With Github</button>
+                <button onClick={handleGithubSignIn} type="button" className="btn btn-outline-secondary">Sign In With Github</button>
             </div>
         </div>
     );
