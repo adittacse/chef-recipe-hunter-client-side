@@ -35,7 +35,7 @@ const Footer = () => {
                             <h5 className="mb-4">Contact Us</h5>
                             <p>
                                 123 Main St, Suite 456<br />
-                                Anytown, USA<br />
+                                Paris, France<br />
                                 info@company.com<br />
                                 (123) 456-7890
                             </p>
