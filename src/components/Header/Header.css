@@ -14,26 +14,10 @@
     color: #fff;
 }
 
-#myNav {
-    justify-content: space-between;
-    flex-grow: 1;
-    height: 60px;
-}
-
-.custom-nav {
-    align-items: center;
-}
-
-.custom-nav a {
-    margin-right: 20px;
-    text-decoration: none;
+.navbar-nav a {
     color: white;
-}
-
-.nav-item {
-    color: #fff;
-    text-decoration: none;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 .nav-item:hover {
