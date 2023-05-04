@@ -9,7 +9,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     
-    const {signIn} = useContext(AuthContext);
+    const {signIn, googleSignIn} = useContext(AuthContext);
     
     const handleLogin = (event) => {
         event.preventDefault();
@@ -26,6 +26,17 @@ const Login = () => {
             })
             .catch(error => {
                 setError("Wrong Credentials!");
+            })
+    }
+    
+    const handleGoogleSignIn = (event) => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                setError(error.message);
             })
     }
     
@@ -48,6 +59,11 @@ const Login = () => {
                 <Form.Text className="text-danger">{error}</Form.Text>
             </Form>
             <p className="text-center mt-4">New to website? Please <Link to="/register">Register here</Link></p>
+            <p className="text-center">Or</p>
+            <div className="d-flex mx-auto justify-content-center">
+                <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-secondary me-3">Sign In With Google</button>
+                <button type="button" className="btn btn-outline-secondary">Sign In With Github</button>
+            </div>
         </div>
     );
 };
