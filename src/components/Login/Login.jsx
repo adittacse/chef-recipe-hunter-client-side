@@ -30,10 +30,12 @@ const Login = () => {
     }
     
     const handleGoogleSignIn = (event) => {
+        event.preventDefault();
+        setError("");
+        
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
             })
             .catch(error => {
                 setError(error.message);
@@ -41,10 +43,12 @@ const Login = () => {
     }
     
     const handleGithubSignIn = (event) => {
+        event.preventDefault();
+        setError("");
+        
         githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
             })
             .catch(error => {
                 setError(error.message);
