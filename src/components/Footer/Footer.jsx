@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Footer.css";
 import { Container, Row, Col } from 'react-bootstrap';
+import moment from "moment/moment.js";
 
 const Footer = () => {
     return (
@@ -42,8 +43,7 @@ const Footer = () => {
                     </Row>
                     <Row className="mt-4">
                         <Col className="text-center">
-                            <p>&copy; 2023 ChefSite. All rights reserved.</p>
-                            <p>Developed using react js</p>
+                            <p>&copy; {moment().format("YYYY")} Deshi Chef. All rights reserved.</p>
                         </Col>
                     </Row>
                 </Container>
