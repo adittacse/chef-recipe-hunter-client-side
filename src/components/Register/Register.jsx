@@ -20,6 +20,12 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        
+        if (password !== confirmPassword) {
+            setError("Password didn't matched!");
+            return;
+        }
         
         //validate password
         if(!/(?=.*[A-Z])/.test(password)) {
@@ -75,7 +81,12 @@ const Register = () => {
                 
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter Password" required />
+                    <Form.Control type="password" placeholder="Enter password" required />
+                </Form.Group>
+                
+                <Form.Group className="mb-3" controlId="confirmPassword">
+                    <Form.Label>Confirm password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter confirm password" required />
                 </Form.Group>
                 
                 <Button variant="primary" type="submit">Register</Button>
