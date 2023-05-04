@@ -19,7 +19,7 @@ const Slider = () => {
                 />
                 <Carousel.Caption>
                     <h3>Clam Chowder</h3>
-                    <p>Description of Recipe 1</p>
+                    <p>Our most sold item Calm Chowder</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -31,7 +31,7 @@ const Slider = () => {
                 
                 <Carousel.Caption>
                     <h3>Buffalo Wings</h3>
-                    <p>Description of Recipe 2</p>
+                    <p>Perfect for your baby</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -43,7 +43,7 @@ const Slider = () => {
                 
                 <Carousel.Caption>
                     <h3>Macaroni and Cheese</h3>
-                    <p>Description of Recipe 3</p>
+                    <p>This item for spicy lovers</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -55,7 +55,7 @@ const Slider = () => {
                 
                 <Carousel.Caption>
                     <h3>Chocolate Pancakes</h3>
-                    <p>Description of Recipe 4</p>
+                    <p>Make your romance with our Chocolate Pancakes</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
