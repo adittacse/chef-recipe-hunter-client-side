@@ -2,6 +2,7 @@ import React from 'react';
 import ChefCard from "../ChefCard/ChefCard.jsx";
 import {useLoaderData} from "react-router-dom";
 import Slider from "../Slider/Slider.jsx";
+import FeaturedRecipe from "../FeauredRecipe/FeaturedRecipe.jsx";
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -15,6 +16,8 @@ const Home = () => {
                     chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)
                 }
             </div>
+            <FeaturedRecipe></FeaturedRecipe>
+            
         </div>
     );
 };
