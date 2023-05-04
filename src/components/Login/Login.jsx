@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider.jsx";
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -76,8 +77,8 @@ const Login = () => {
             <p className="text-center mt-4">New to website? Please <Link to="/register">Register here</Link></p>
             <p className="text-center">Or</p>
             <div className="d-flex mx-auto justify-content-center">
-                <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-secondary me-3">Sign In With Google</button>
-                <button onClick={handleGithubSignIn} type="button" className="btn btn-outline-secondary">Sign In With Github</button>
+                <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-secondary me-3"><FaGoogle /> Sign In With Google</button>
+                <button onClick={handleGithubSignIn} type="button" className="btn btn-outline-secondary"><FaGithub /> Sign In With Github</button>
             </div>
         </div>
     );
