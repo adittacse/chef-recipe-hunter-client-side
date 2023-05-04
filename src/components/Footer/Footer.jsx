@@ -43,7 +43,7 @@ const Footer = () => {
                     </Row>
                     <Row className="mt-4">
                         <Col className="text-center">
-                            <p>&copy; {moment().format("YYYY")} Deshi Chef. All rights reserved.</p>
+                            <p>&copy; {moment().format("YYYY")} Bistro Voltaire. All rights reserved.</p>
                         </Col>
                     </Row>
                 </Container>

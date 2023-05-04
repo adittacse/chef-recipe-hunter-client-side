@@ -6,7 +6,7 @@ const FeaturedRecipe = () => {
         <Container className="container d-flex justify-content-center align-items-center pt-4 mt-5">
             <Row>
                 <Col md={6} className="mb-4">
-                    <h2 className="mb-4 text-center">About Deshi Chef</h2>
+                    <h2 className="mb-4 text-center">About Bistro Voltaire</h2>
                     <p>
                         Our featured recipe this month is a delicious chicken and mushroom risotto. This creamy and flavorful dish is perfect for any occasion and is sure to impress your guests.
                         <br/> <br/>
