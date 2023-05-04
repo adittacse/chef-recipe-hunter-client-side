@@ -3,6 +3,7 @@ import ChefCard from "../ChefCard/ChefCard.jsx";
 import {useLoaderData} from "react-router-dom";
 import Slider from "../Slider/Slider.jsx";
 import FeaturedRecipe from "../FeauredRecipe/FeaturedRecipe.jsx";
+import RecipeSection from "../RecipeSection/RecipeSection.jsx";
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -17,7 +18,7 @@ const Home = () => {
                 }
             </div>
             <FeaturedRecipe></FeaturedRecipe>
-            
+            <RecipeSection></RecipeSection>
         </div>
     );
 };
