@@ -7,7 +7,7 @@ const RecipeSection = () => {
             <Container>
                 <h2 className="text-center mt-5 mb-5">Featured Recipes</h2>
                 <Row>
-                    <Col sm={12} md={6} lg={4}>
+                    <Col sm={12} md={6} lg={4} className="mb-3">
                         <Card>
                             <Card.Img height={250} variant="top" src="https://media.istockphoto.com/id/845169430/photo/mixed-chefs-salad-mixed-chefs-salad.jpg?s=170667a&w=0&k=20&c=3kE6NwN-JCZBbHI1J-AQKG1u9EpN22NYxA15J9IeFZI=" />
                             <Card.Body>
@@ -18,7 +18,7 @@ const RecipeSection = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col sm={12} md={6} lg={4}>
+                    <Col sm={12} md={6} lg={4} className="mb-3">
                         <Card>
                             <Card.Img height={250} variant="top" src="https://media.istockphoto.com/id/1089055456/photo/ingredients-for-vegetarian-salad-flat-lay.jpg?s=170667a&w=0&k=20&c=zc0ySdLpb36eSGcUgQXY9ooQM8PXJeCiZIc2aQ_LBLU=" />
                             <Card.Body>
