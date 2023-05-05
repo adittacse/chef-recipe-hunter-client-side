@@ -8,7 +8,7 @@ const Register = () => {
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
     
-    const {createUser} = useContext(AuthContext);
+    const {createUser, logOut} = useContext(AuthContext);
     
     const handleRegister = (event) => {
         event.preventDefault();
@@ -46,6 +46,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
+                logOut();
                 setSuccess("Account has been created!");
                 updateProfile(createdUser, {
                     displayName: name, photoURL: photo
