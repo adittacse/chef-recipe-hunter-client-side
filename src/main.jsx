@@ -21,12 +21,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("https://chefrecipehunterserverside-adittacse.b4a.run/chef/")
+                loader: () => fetch("https://chef-recipe-hunter-server-side.onrender.com//chef/")
             },
             {
                 path: "/chefdetails/:id",
                 element: <ChefDetails></ChefDetails>,
-                loader: ({params}) => fetch(`https://chefrecipehunterserverside-adittacse.b4a.run/chef/${params.id}`)
+                loader: ({params}) => fetch(`https://chef-recipe-hunter-server-side.onrender.com//chef/${params.id}`)
             },
             {
                 path: "/blog",
